@@ -10,3 +10,7 @@ while True:
     print("Sorry we really need to know your name to help us process this order.")
   else:
     break
+#•	If the reply only contains letters then 
+#Sequence 2:- Menu
+print(f"Kia Ora, {Name} welcome to the Fraser High School canteen.")
+print()
