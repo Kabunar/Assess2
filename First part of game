@@ -1,0 +1,12 @@
+#Ask the user what their name is and greet the user using a common Te Reo greeting including the information the user provided and welcome them to the canteen software
+print("* * * * Welcome to the Fraser school canteen * * * *")
+print()
+print()
+print()
+while True:
+  #•	If reply is not a string then 
+  Name = input("What is your name? ")
+  if not Name.isalpha():
+    print("Sorry we really need to know your name to help us process this order.")
+  else:
+    break
