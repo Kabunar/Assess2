@@ -1,0 +1,45 @@
+#
+#
+#
+#
+#Variables
+Attempts = 3
+Welcome = "* * * * Welcome to Kabunare Math's Quiz * * * *"
+#welcome the user
+print(Welcome)
+print()
+print()
+#Ask for the user's name
+while True:
+  Name = input("Enter your name: ")
+  if not Name.isalpha():
+    print()
+    print()
+    print("Please enter a real name... ")
+    print()
+    print()
+  else:
+    print()
+    print()
+    print("Welcome to Kabunare Math Quiz")
+    print()
+    print()
+    break
+#Ask what grade they are in
+print("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ")
+print()
+print()
+UserGrade = int(input("Please enter a grade between 9 and 11: "))
+#If they enter a grade higher than 9
+while True:
+  if UserGrade >= 12:
+    print()
+    print()
+    UserGrade = int(input("Please enter a grade between 9 and 11: "))
+    print()
+    print()
+  else:
+    print()
+    print()
+    print(f" * * * * Welcome {Name} To kabunare Math Quiz (Year {UserGrade} Edition) * * * *")
+    break
