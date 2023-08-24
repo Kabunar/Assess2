@@ -1,0 +1,540 @@
+# # # # # # # Kabunare calling file
+def name():
+  while True:
+  #A continual loop until the user gives a real name 
+    Name = input("Enter your real name: ")
+  #Checks if the user give a real name
+    if not Name.isalpha():
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+    #if they give a fake name this is the input
+      print("Please enter a real name... ")
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+    else:
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+    #if the user gives a real name, this output is shown
+      print("Welcome to Kabunare Math Quiz")
+    print()
+    #breaks the loop
+    break
+def hello():
+  print("* * * welcome to kabunare's game * * *")
+  print() # These prints gives space in between of each output so my code is more readable.
+  print() # These prints gives space in between of each output so my code is more readable.
+  print() # These prints gives space in between of each output so my code is more readable.
+#addition
+import random
+def AdditionEasy():
+  #variables
+      print() # These prints gives space in between of each output so my code is more readable.
+      print("Welcome to Kabunare Addition Math Quiz")
+      print() # These prints gives space in between of each output so my code is more readable.
+      Attempts = 3
+      addition_score = 0
+      while True:
+        #this code of block generates random questions after the previous is answered.
+        First = random.randint(1,10)
+        Second = random.randint(1,10)
+        #this is the questions
+        while True:
+          # a loop that breaks until the user gives the correct input
+          try:
+            Question = int(input(f"What is {First} + {Second}: "))
+            break
+          except ValueError:
+            print("Numbers only please!")
+        if Question == First + Second:
+          #if the user gets the answer right {First} + {Second} correct, game will continue
+          print("Nice one")
+          #gives you one point cuz u got it correct
+          addition_score += 1
+          print("You received 1 point")
+        elif Attempts <2:
+          #this block of code will appear if u got 3 answers wrong, how it works is it minius 1 everytime you get a question wrong from your constant attempt value which is 3
+          print(f"congrants you managed to accumulate {addition_score} points!")
+          while True: # a loop that will continue to run until user puts the correct input which are yes or no
+            x = input("Would you like to play again? ").lower() #this asks the user the question
+            if x == "yes": #if the user answers yes to the previous question
+              AdditionEasy() #the game starts over all
+            elif x == "no": #otherwise if the user says no
+              print("goodbye! ")# game prints out bye
+              quit()# and quits the code
+            else:
+              #if the user enters anything ELSE than yes or no, 
+              print("Please enter yes or no.")
+          
+        else:
+          #if the user gets the answer wrong, this will pop up warning them about their missing attempts
+          Attempts -= 1
+          print(f"Try again wrong {Attempts} attempts left")
+def AdditionMedium():
+  #variables (obv)
+      print() # These prints gives space in between of each output so my code is more readable.
+      print("* * * * Welcome to Kaunare Addition Math Quiz * * * *")
+      print() # These prints gives space in between of each output so my code is more readable.
+      Attempts = 3
+      addition_mscore = 0
+      while True:
+        #a loop that will continue until you have 0 attempts/lives left
+        First = random.randint(10,20)
+        #the block of code above and below 76 is a random question generator between 10 and 20.
+        Second = random.randint(10,20)
+        #the line below this is the whats asking the question
+        while True: #this is a loop that will break whenver the user gives a valid answer
+          try:
+            Question = int(input(f"What is {First} + {Second}: "))
+            break #loop break when the users give the correct input
+          except ValueError:
+            print("Numbers only please!")
+        if Question == First + Second:
+          #if the user gets the answer correct this line of block will pop up
+          print("Nice one")
+          #the line below this is responsible for giving you 1 point after getting the correct answer.
+          addition_mscore += 1
+          print("You receivd 1 point ")
+        elif Attempts <2:
+          #if the user somehow loses all the attempts this will show up
+          print("congrats you managed to accumulate points")
+          #call the try again function
+          while True: # a loop that will run until the user enters yes or no either in cap or normal.
+            x = input("Would you like to play again? ").lower() # this asks the user the question
+            if x == "no": #if the user enter no
+              quit()# game will qui
+            elif x == "yes": # if the user enter yes
+              AdditionMedium() #the game starts all over again
+            else: #if the use enters anything else than yes or no
+              print("Please enter yes or no.") # you get asked the
+        else:
+          #if the user gets the answer wrong this will pop up aswell as taking away 1 attempts
+          Attempts -= 1
+          print(f"Try again wrong {Attempts} attempts left")
+def AdditionHard():
+    #variables (obv
+      Attempts = 3
+      print() # These prints gives space in between of each output so my code is more readable.
+      print("* * * Welcome to Kabunare Addition Math Quiz * * *")
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+      addition_hscore = 0
+      while True:
+        #a loop that will continue until you have 0 attempts/lives left
+        First = random.randint(20,100)
+        #the line below this is the whats asking the question
+        Second = random.randint(20,100)
+        while True: #a loop that breaks until the user gives the correct number
+          try:
+            Question = int(input(f"What is {First} + {Second}: "))
+            break #breaks the loop when the user input is valid
+          except ValueError:
+            print("Numbers only please!") # error telling user to enter correct number
+        #the line below this is responsible for giving you 1 point after getting the correct answer.
+        if Question == First + Second:
+          print("Nice one")
+          addition_hscore += 1
+          print("You have received 1 point! Good for you. ")
+        elif Attempts <2:
+          #if the user somehow loses all the attempts this will show up
+          print(f"congrants you managed to accumulate {addition_hscore} points")
+          while True:
+            a = input("Do you want to play again? ").lower()
+            if a == "yes":
+              AdditionHard()
+            elif a == "no":
+              quit()
+            else:
+              print("Please enter yes or no.")
+        else:
+          #a block of line responsible for telling you that your answer was incorrect. it also takes away 1 out of 3 lives
+          Attempts -= 1
+          print(f"Try again wrong {Attempts} attempts left")
+def SubtractionEasy():
+  #variables
+      print() # These prints gives space in between of each output so my code is more readable.
+      print("* * * Welcome To Kabunare Subtraction Math Quiz * * *")
+      print() # These prints gives space in between of each output so my code is more readable.
+      Attempts = 3
+      subtraction_score = 0
+      while True:
+        #a continual loop until the user loses 3/3 lives
+        First = random.randint(1,10)
+        #random number generator
+        Second = random.randint(1,10)
+        #the line below uses the randomly generated numbers to ask questions
+        while True: # loop
+          try:
+            Question = int(input(f"What is {First} - {Second}: "))
+            break #breaks the loop when user gives the correct answer
+          except ValueError: #response whenever the user enters a letter
+            print("Numbers only please! ")
+        #checks if the user input questions is correct
+        if Question == First - Second:
+          #if the user gets it correct, this will pop up aswell as giving them a point
+          print("Nice one")
+          subtraction_score += 1
+          print("You scored 1 point")
+        elif Attempts <2:
+          #The code above me is responsible for telling you aren't good at math XD
+          print(f"congrants you managed to accumulate {subtraction_score} points")
+          #call the try again function to deal with you
+          while True:
+            x = input("Would you like to play again? ").lower()
+            if x == "yes":
+              SubtractionEasy()
+            elif x == "no":
+              quit()
+            else:
+              print("Please enter yes or no")
+          
+        else:
+          #else and below line is responsible for taking away your points when you get your answer wrong
+          Attempts -= 1
+          print(f"Try again wrong {Attempts} attempts left")    
+#subtraction medium
+def SubtractionMedium():
+  #variables
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+      print("* * * Welcome to Kabunare Subtraction Game Medium mode * * *")
+      print() # These prints gives space in between of each output so my code is more readable.
+      Attempts = 3
+      score = 0
+      while True:
+        #a loop until you give the correct answer
+        First = random.randint(10,20)
+        #randomly generates number
+        Second = random.randint(10,20)
+        #uses the randomly generated number to ask questions
+        while True: # a loop that will break until the user gives the correct input (from this point onward to save time i will not write down any more comment as I already written down many in my previous codes to save time because right now I have a few hours left until the assessment is due (note: will not comment only in this new part)
+          try:
+            Question = int(input(f"What is {First} - {Second}: ")) 
+            break
+          except ValueError:
+            print("Numbers only please! ")
+        #checks if ur answer is correct
+        if Question == First - Second:
+          #if it correct, you will receive one point aswell as a praise from the bot
+          print("Nice one")
+          score += 1
+          print("You score 1 points")
+        elif Attempts <2:
+          #if u somehow lose al 3 attempts, this will pop up
+          print(f"congrants you managed to accumulate {score} points")
+          #call the try again function to deal with yo
+          while True:
+            x = input("Would you like to play again? ").lower()
+            if x == "yes":
+              SubtractionEasy()
+            elif x == "no":
+              quit()
+            else:
+              print("Please enter yes or no")
+          
+        else:
+          #if the user gets the wrong answer, this will pop up aswell as taking away 1 live from your 3 Attempts
+          Attempts -= 1
+          print(f"Try again wrong {Attempts} attempts left")
+#subtraction hard
+def SubtractionHard():
+  #variables
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+      print("* * * Welcome to Kabunare Subtraction Game Hard mode * * *")
+      print() # These prints gives space in between of each output so my code is more readable.
+      Attempts = 3
+      score = 0
+      while True:
+        # a loop that generates random numbers and many mores
+        First = random.randint(20,100)
+        # the line below and above are responsible for generating random numbers to ask you
+        Second = random.randint(20,100)
+        #asks the question
+        while True:
+          try:
+            Question = int(input(f"What is {First} - {Second}: "))
+            break
+          except ValueError:
+            print("Numbers only please! ")
+        #checks your answer
+        if Question == First - Second:
+          #if the answer is correct the line above and below will deal with you
+          print("Nice one")
+          score += 1
+          print("You received 1 point.")
+        elif Attempts <2:
+          #ends your game cuz u got less than 2 lives left, also prints out how many points u managed to accumulate
+          print(f"congrats you managed to accumulate {score} points")
+          #calls the try again function to deal with you XD
+          while True:
+            c = input("Would you like to play again? ")
+            if c == "yes":
+              SubtractionHard()
+            elif c == "no":
+              print("Goodbye")
+              quit()
+            else:
+              print("Please enter yes or no.")
+        else:
+          #deals with you whenever you answered the wrong Question
+          Attempts -= 1
+          print(f"Try again wrong {Attempts} attempts left")
+#Divison
+def DivisonEasy():
+  
+  #variables
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+      print("* * * Welcome to Kabunare Division Game Easy mode * * *")
+      Attempts = 3
+      score = 0
+      while True:
+        #a loop responsible for many things
+        First = random.randint(10,20)
+        #inside a loop that generates random numbers
+        Second = random.randint(1,10)
+        #the line below uses the randomly generated numbers to ask you questions.
+        while True:
+          try:
+            Question = float(input(f"(2 dp rounding rounding )What is {First} / {Second}: "))
+            break
+          except ValueError:
+            print("Enter number only please! ")
+        #checks if you got the answer right (rounded too)
+        if round(Question, 2) == round(First / Second, 2):
+          #if you got it, you will get the line below + 1 point
+          print("Nice one")
+          score += 1
+          print("You received 1 point")
+        elif Attempts <2:
+          #if u lose 3/3 lives, game will ends and will print out how much money u managed to accumulate
+          print(f"congrats you managed to accumulate {score} points!")
+          #calls the try again function for division
+          while True:
+            x = input("Would you like to play again? ").lower()
+            if x == "yes":
+              DivisonEasy()
+            elif x == "no":
+              quit()
+            else:
+              print("goodbye")
+              quit()
+        else:
+          #the line 231 and 232 is responsible for reminding you that your answer was incorrect and also takes away 1 point out of 3
+          Attempts -= 1
+          print(f"Try again wrong {Attempts} attempts left")
+#division medium
+def DivisonMedium():
+  #variables
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+      print("* * * Welcome to Kabunare Division Game Medium mode * * *")
+      score = 0
+      Attempts = 3
+      while True:
+        # an important loop ( i will explain later)
+        First = random.randint(10,50)
+        #randomly generated numbers (since it in a loop until something happens which I'll explain later on)
+        Second = random.randint(1,10)
+        #the line below uses the randomly generated numbers to ask you questions
+        while True:
+          try:
+            Question = float(input(f"(2 dp rounding rounding )What is {First} / {Second}: "))
+            break
+          except ValueError:
+            print("Numbers only please!")
+        #the line below checks if your answer is correct
+        if round(Question, 2) == round(First / Second, 2):
+          #if it correct you receive 1 point + a praise VERY COOL
+          print("Nice one")
+          score += 1
+          print("You received 1 point.")
+          #the line below is responsible for giving an output after you lose all your 3 attempts
+        elif Attempts <2:
+          print(f"congrats you managed to accumulate {score} points!")
+          while True:
+            x = input("Would you like to play again? ").lower()
+            if x == "yes":
+              DivisonMedium()
+            elif x == "no":
+              quit()
+            else:
+              print("Please enter yes or no.")
+          break
+        else:
+          #the line above and below 256 is responsible for taking away 1/3 life 
+          Attempts -= 1
+          print(f"Try again wrong {Attempts} attempts left")
+#Division HARD MODE
+def DivisonHard():
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+      print("* * * Welcome to Kabunare Division Game Hard mode * * *")
+      print() # These prints gives space in between of each output so my code is more readable.
+      print() # These prints gives space in between of each output so my code is more readable.
+  #variables 
+      Attempts = 3
+  #this is how many attempts the user will have upon playing
+      score = 0
+      while True:
+        #generate random numbers everytime it's executed
+        First = random.randint(20,100)
+        Second = random.randint(1,10)
+        #the line below uses the randomly generated number to ask questions, the {First} is the from the line 266 similiarly the second line is 267.
+        while True:
+          try:
+            Question = float(input(f"(2 dp rounding rounding )What is {First} / {Second}: "))
+            break
+          except ValueError:
+            print("Numbers only please! ")
+        if round(Question, 2) == round(First / Second, 2):
+          #the round function rounds the answer to the nearest 2 decimal place
+          print("Nice one")
+          #gives u 1 point when you get the correct answer.
+          score += 1
+          print("You received 1 point.")
+        elif Attempts <2:
+          #the line gives u how many points u managed to accumulate with 3 lives
+          print(f"congrats you managed to accumulate {score} points!")
+          #the line below call the try again function specifically for divison, that function basically deals with you.
+          while True:
+            x = input("Would you like to play again? ").lower()
+            if x == "yes":
+              DivisonHard()
+            elif x == "no":
+              quit()
+            else:
+              print("Please enter yes or no.")
+        else:
+          #this function deals with you when you get the answer wrong
+          #line 285 to 286 subtractions 1 out of your 3 total lives and prints out your remaining attempts.
+          Attempts -= 1
+          print(f"Try again wrong {Attempts} attempts left")
+def MultiplicationEasy():
+  #variables
+        print() # These prints gives space in between of each output so my code is more readable.
+        print() # These prints gives space in between of each output so my code is more readable.
+        print("* * * Welcome to Kabunare Multiplication Game Easy mode * * *")
+        print() # These prints gives space in between of each output so my code is more readable.
+        print() # These prints gives space in between of each output so my code is more readable.
+        Attempts = 3
+        score = 0
+        while True:
+          #the line below and 295 is responsible for generating random numbers
+          First = random.randint(1,10)
+          Second = random.randint(1,10)
+          #the line below uses the randomly generated number to create/ask questions
+          while True:
+            try:
+              
+              Question = int(input(f"What is {First} multiplied by {Second}: "))
+              break
+            except ValueError:
+              print("Numbers only please! ")
+          #the line below is responsbile for giving you point after you got the question correct
+          if Question == First * Second:
+            #if the answer is correct you will receive one point
+            score += 1
+            print("Nice one")
+            print("You received 1 point.")
+          elif Attempts <2:
+            #if you have used all your attempts/ got 3 questions wrong, game will end and the total amount of points you managed to accumulate will be printed.
+            print(f"congrats you managed to accumulate {score} points!")
+            while True:
+              x = input("Would you like to play again? ").lower()
+              if x == "yes":
+                MultiplicationEasy()
+              elif x == "no":
+                quit()
+              else:
+                print("Please enter yes or no.")
+          else:
+            #if you get the question wrong this block of code will take away 1 from your 3 lives and print out your remaining lives as a heads up.
+            Attempts -= 1
+            print(f"Try again wrong {Attempts} attempts left")
+#multiplcation medium
+def MultiplicationMedium():
+        print() # These prints gives space in between of each output so my code is more readable.
+        print() # These prints gives space in between of each output so my code is more readable.
+        print("* * * Welcome to Kabunare Multiplication Game Medium mode * * *")
+        print() # These prints gives space in between of each output so my code is more readable.
+        print() # These prints gives space in between of each output so my code is more readable.
+        #variables 
+        score = 0
+        Attempts = 3
+        #a loop that will countinue until you lose all 3/3 lives
+        while True:
+          #random generated numbers on line 320 and line 321
+          First = random.randint(1,30)
+          Second = random.randint(1,30)
+          #use the randomly generated number to ask a question
+          while True:
+            try:
+              Question = int(input(f"What is {First} multiplied by {Second}: "))
+              break
+            except ValueError:
+              print("Enter numbers only")
+          if Question == First * Second:
+            #if u get the answer correct you will receive one point
+            score += 1
+            print("Nice one")
+            print("You received 1 point.")
+            #if u used all 3 attempts you will get this output (line 330)
+          elif Attempts <2:
+            print(f"congrats you managed to accumulate {score} points!")
+            while True:
+              x = input("Would you like to play again? ").lower()
+              if x == "yes":
+                MultiplicationMedium()
+              elif x == "no":
+                quit()
+              else:
+                print("Goodbye")
+                quit()
+            #the line above this is responsible for dealing with you when you used all 3/3 lives
+          else:
+            #the line below is responsible taking away your point when you get the question wrong
+            Attempts -= 1
+            print(f"Try again wrong {Attempts} attempts left")
+#Multiplication Hard
+def MultiplicationHard():
+        #variables
+        print() # These prints gives space in between of each output so my code is more readable.
+        print() # These prints gives space in between of each output so my code is more readable.
+        print("* * * Welcome to Kabunare Multiplication Game Hard mode * * *")
+        print() # These prints gives space in between of each output so my code is more readable.
+        print() # These prints gives space in between of each output so my code is more readable.
+        Attempts = 3
+        score = 0
+        while True:
+          #randomly generated numbers
+          First = random.randint(20,100)
+          Second = random.randint(20,100)
+          #the line below use the randomly generated numbers to ask question
+          while True:
+            try:
+              Question = int(input(f"What is {First} multiplied by {Second}: "))
+              break
+            except ValueError:
+              print("Enter numbers only please!")
+          #the line below asks he question
+          if Question == First * Second:
+            #when you get the question correct you will receive one point + a praise VERY COOL
+            score += 1
+            print("Nice one")
+            print("You received 1 point. ")
+            #when you lose 3/3 lives the line below will deal with you
+          elif Attempts <2:
+            #when you lose 3/3 lives the game will end (its in the try again function, and will print out how many points you managed to accumulate.)
+            print(f"congrats you managed to accumulate {score} points!")
+            while True:
+              x = input("Would you like to play again? ").lower()
+              if x == " yes":
+                MultiplicationHard()
+              elif x == "no":
+                print("Goodbye")
+                quit()
+          else:
+            #when you the question wrong asked in line 350, you will lose 1 out of your 3 lives
+            Attempts -= 1
+            print(f"Try again wrong {Attempts} attempts left")
