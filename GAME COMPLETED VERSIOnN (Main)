@@ -1,0 +1,131 @@
+#less than 200 lines
+#  Kabunare Math Quiz
+from fun import hello
+from fun import AdditionEasy
+from fun import AdditionMedium
+from fun import AdditionHard
+from fun import SubtractionEasy
+from fun import SubtractionHard
+from fun import SubtractionMedium
+from fun import MultiplicationEasy
+from fun import MultiplicationMedium
+from fun import MultiplicationHard
+from fun import DivisonEasy
+from fun import DivisonMedium
+from fun import DivisonHard
+hello()
+while True:
+  #A loop that ask will ask the user it real name
+  Name = input("Enter your real name: ")
+  if not Name.isalpha():
+    print()
+    print("Please enter your real name")
+    print()
+  else:
+    print()
+    print("Welcome To Kabunare Math Quiz")
+    break
+# next code of line
+print("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ")
+print() # These prints gives space in between of each output so my code is more readable.
+while True:
+  #a loop until the user answer the question which is input 1 2 3 or 4
+  print()
+  #this is the question
+  choice = input("Enter 1: To play Addition, Enter 2: To play Subtraction, Enter 3: To play Multiplication, Enter 4: To play Division:")
+  #if the user gives the following options, loop will break as it is not needed and code will continue
+  if choice == "1" or choice == "2" or choice == "3" or choice == "4":
+    break
+  else:
+    print()
+    #if the user enters something totally different answer, loop will continue and will ask the question again
+    print("Please enter any of the following [1, 2, 3, 4]")
+#  #  #  #  #  #
+if choice == "1":
+  while True:
+    #a while True function that will countinue to run until you enter easy medium or hard
+    type = input(
+"Please enter your desired difficulty easy, medium, or hard: ").lower()
+    if type == "easy" or type == "medium" or type == "hard":
+      #if the user enters yes or no the loop will break and the code will continue
+      break
+    else:
+      #if the user enters something else rather than yes or no
+      print("Enter [Easy, Medium, Hard]")
+  if type == "easy":
+    #if the user wants to play easy (again??) the addition easy will run
+    AdditionEasy()
+  elif type == "medium":
+    #if the user wants to play medium, the medium function will run
+    AdditionMedium()
+  elif type == "hard":
+    #if the user wants to play hard, the hard function for addition will be run
+    AdditionHard()
+#responses multiplication
+if choice == "3":
+  #if the use wants to play multiplication
+  while True:
+    #ask the user which mode he wants to play with in a loop
+    type = input(
+      "Please enter your desired difficulty easy, medium, or hard: ").lower()
+    if type == "easy" or type == "medium" or type == "hard":
+      #the line above and below this is responsible for breaking the loop when the user enters either one of these [easy medium or hard]
+      break
+    else:git
+      #if the user enters someting else, line 528 will print out something
+      print("")
+  if type == "easy":
+    #if the user chooses easy the easy function for multiplication will run
+    MultiplicationEasy()
+  elif type == "medium":
+    #if the user choose medium, the medium function will be run
+    MultiplicationMedium()
+  elif type == "hard":
+    MultiplicationHard()
+#if the user choose hard the multiplication for hardcore will run
+#response
+if choice == "2":
+  while True:
+    #if the user picks 2 which is subtraction, this block of code will run
+    #you will be ask a question in loop until you answer it correctly, which is easy, medium or hard
+    type = input(
+      "Please enter your desired difficulty easy, medium, or hard: ").lower()
+    #if you answer the correct ones [easy, medium, hard]
+    if type == "easy" or type == "medium" or type == "hard":
+      #the loop will break
+      break
+    else:
+      #if the user enters something else
+      print("Please enter easy, medium, or hard.")
+      #code will run again :/
+  if type == "easy":
+    #if said easy, the easy function will run
+    SubtractionEasy()
+  elif type == "medium":
+    #if user said medim, the medim function for subtraction will be ran
+    SubtractionMedium()
+  elif type == "hard":
+    #if user typed in hard, the hard function will be ran
+    SubtractionHard()
+#divison
+if choice == "4":
+  #if the user said 4, divison function will be called
+  while True:
+    #ask the user what (pronouns) wants to play, if they enter easy hard or medium he loop will break and code will continue to run
+    type = input(
+      "Please enter your desired difficulty easy, medium, or hard: ").lower()
+    if type == "easy" or type == "medium" or type == "hard":
+      #this breaks the loop
+      break
+    else:
+      #if the user says anything else than easy medium or hard
+      print("Please enter easy, medium, or hard.")
+  if type == "easy":
+    #if the user enteres easy, the asy function for division will be run
+    DivisonEasy()
+  elif type == "medium":
+    #if the user enters medium, the medium function for division will be run
+    DivisonMedium()
+  elif type == "hard":
+    #if the user enters hard, the hard function for division will be run.
+    DivisonHard()
